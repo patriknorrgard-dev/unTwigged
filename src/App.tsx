@@ -1,5 +1,12 @@
+import { Route, Routes } from "react-router";
+import HomePage from "./pages/HomePage";
+
 function App() {
-  return <h1>unTwigged</h1>
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+    </Routes>
+  )
 }
 
 export default App;
