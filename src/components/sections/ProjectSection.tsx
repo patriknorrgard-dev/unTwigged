@@ -1,4 +1,5 @@
 import { useProjects } from "../../hooks/useProjects";
+import ProjectList from "../lists/ProjectList";
 
 const ProjectSection = () => {
   const { data } = useProjects();
@@ -15,16 +16,7 @@ const ProjectSection = () => {
                 <h3>{section.sectionTitle}</h3>
                 <p>{section.sectionDescription}</p>
 
-                {section.projectItems.map((item: any) => (
-                  <div key={item.id}>
-                    <h4>{item.title}</h4>
-                    <p>{item.preamble}</p>
-                    <img
-                      src={item.image.mediaImage.url}
-                      alt={item.title}
-                    />
-                  </div>
-                ))}
+                <ProjectList items={section.projectItems} />
               </div>
             ))}
           </div>
