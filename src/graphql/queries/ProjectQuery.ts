@@ -1,34 +1,19 @@
 import { gql } from "graphql-request";
+import { PROJECT_SECTION_FRAGMENT } from "../fragments/projectFragment";
 
 export const GET_PROJECT_CONTENT = gql`
-query GetProjectContent{
-  usercontentGraphql1 {
-    results {
-      ... on NodeProject {
-        id
-        sections {
-          ... on ParagraphProjectSection {
-            id
-            sectionTitle
-            sectionDescription
-            projectItems {
-              ... on ParagraphProjectItem {
-                id
-                title
-                preamble
-                image {
-                  ... on MediaImage {
-                    mediaImage {
-                      url
-                    }
-                  }
-                }
-              }
-            }
+  query GetProjectContent {
+    usercontentGraphql1 {
+      results {
+        ... on NodeProject {
+          id
+          sections {
+            ...ProjectSectionFragment
           }
         }
       }
     }
   }
-}
-`;
+
+  ${PROJECT_SECTION_FRAGMENT}
+`;  
