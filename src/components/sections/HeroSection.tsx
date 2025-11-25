@@ -1,7 +1,7 @@
-import { useHero } from "../../hooks/useHero";
+import { useHome } from "../../hooks/useHome";
 
 const HeroSection = () => {
-  const { data } = useHero();
+  const { data } = useHome();
 
   return (
     <>
