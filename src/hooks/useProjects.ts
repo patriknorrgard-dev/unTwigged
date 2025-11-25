@@ -1,40 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { request, gql } from "graphql-request";
+import { request } from "graphql-request";
+import { GET_PROJECT_CONTENT } from "../graphql/queries/ProjectQuery";
 
 const API_URL = 'http://127.0.0.1:8888/graphql';
-
-const GET_PROJECT_CONTENT = gql`
-query GetProjectContent{
-  usercontentGraphql1 {
-    results {
-      ... on NodeProject {
-        id
-        sections {
-          ... on ParagraphProjectSection {
-            id
-            sectionTitle
-            sectionDescription
-            projectItems {
-              ... on ParagraphProjectItem {
-                id
-                title
-                preamble
-                image {
-                  ... on MediaImage {
-                    mediaImage {
-                      url
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`;
 
 const fetchProjects = async () => {
   return request(API_URL, GET_PROJECT_CONTENT);
