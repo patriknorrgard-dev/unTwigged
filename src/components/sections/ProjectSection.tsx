@@ -1,22 +1,21 @@
-import { useProjects } from "../../hooks/useProjects";
+import { usePortfolio } from "../../hooks/usePortfolio";
 import ProjectList from "../lists/ProjectList";
 
 const ProjectSection = () => {
-  const { data } = useProjects(2);
+  const { data } = usePortfolio(2);
 
   return (
     <>
       {data && (
         data.usercontentbyidGraphql1.results.map((project: any) => (
           <div key={project.id}>
-            <h2>{project.title}</h2>
 
             {project.sections?.map((section: any) => (
               <div key={section.id}>
                 <h3>{section.sectionTitle}</h3>
                 <p>{section.sectionDescription}</p>
 
-                <ProjectList items={section.projectItems} />
+                <ProjectList items={section.projectItems || []} />
               </div>
             ))}
           </div>
