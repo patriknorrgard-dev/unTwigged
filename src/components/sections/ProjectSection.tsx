@@ -2,12 +2,12 @@ import { useProjects } from "../../hooks/useProjects";
 import ProjectList from "../lists/ProjectList";
 
 const ProjectSection = () => {
-  const { data } = useProjects();
+  const { data } = useProjects(2);
 
   return (
     <>
       {data && (
-        data.usercontentGraphql1.results.map((project: any) => (
+        data.usercontentbyidGraphql1.results.map((project: any) => (
           <div key={project.id}>
             <h2>{project.title}</h2>
 

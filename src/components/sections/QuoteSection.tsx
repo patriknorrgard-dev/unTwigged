@@ -1,12 +1,12 @@
 import { usePortfolio } from "../../hooks/usePortfolio";
 
 const QuoteSection = () => {
-  const { data } = usePortfolio();
+  const { data } = usePortfolio(2);
 
   return (
     <>
       {data && (
-        data.usercontentGraphql1.results.map((content: any) => (
+        data.usercontentbyidGraphql1.results.map((content: any) => (
           <div key={content.id}>
             <h2>{content.title}</h2>
 
