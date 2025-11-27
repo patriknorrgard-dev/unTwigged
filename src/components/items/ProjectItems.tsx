@@ -6,14 +6,18 @@ interface ProjectItemsProps {
 
 const ProjectItems: React.FC<ProjectItemsProps> = ({ item }) => {
   return (
-    <>
-      <h4>{item.title}</h4>
-      <p>{item.preamble}</p>
-      <img
-        src={item.image.mediaImage.url}
-        alt={item.title}
-      />
-    </>
+    <div className="project">
+      <div className="project__image">
+        <img
+          src={item.image.mediaImage.url}
+          alt={item.title}
+        />
+      </div>
+      <div className="project__content">
+        <h4>{item.title}</h4>
+        <p>{item.preamble}</p>
+      </div>
+    </div>
   )
 }
 

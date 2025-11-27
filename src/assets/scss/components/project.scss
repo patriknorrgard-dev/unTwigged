@@ -1,0 +1,26 @@
+.project {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__image {
+    max-width: 650px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding: 2rem;
+    margin-left: -130px;
+    background-color: #000;
+
+    h4, p {
+      color: #FFF;
+    }
+  }
+}
