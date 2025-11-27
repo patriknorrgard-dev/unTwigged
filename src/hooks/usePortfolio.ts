@@ -4,13 +4,13 @@ import { GET_PORTFOLIO_CONTENT } from "../graphql/queries/PortfolioQuery";
 
 const API_URL = 'http://127.0.0.1:8888/graphql';
 
-const fetchPortfolioContent = async (userId: number) => {
-  return request(API_URL, GET_PORTFOLIO_CONTENT, { userId });
+const fetchPortfolioContent = async (user: string) => {
+  return request(API_URL, GET_PORTFOLIO_CONTENT, { user });
 };
 
-export function usePortfolio(userId: number) {
+export function usePortfolio(user: string) {
   return useQuery({
-    queryKey: ['portfolio', userId],
-    queryFn: () => fetchPortfolioContent(userId),
+    queryKey: ['portfolio', user],
+    queryFn: () => fetchPortfolioContent(user),
   });
 }

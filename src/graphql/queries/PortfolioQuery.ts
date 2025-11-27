@@ -3,8 +3,8 @@ import { PROJECT_SECTION_FRAGMENT } from "../fragments/projectFragment";
 import { QUOTE_SECTION_FRAGMENT } from "../fragments/quoteFragment";
 
 export const GET_PORTFOLIO_CONTENT = gql`
-  query GetPortfolioContent($userId: Float!) {
-    usercontentbyidGraphql1(filter: { user: $userId }) {
+  query GetPortfolioContent($user: String!) {
+    usercontentbyidGraphql1(filter: { username: $user }) {
       results {
         ... on NodePortfolio {
           id
