@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router";
 import HomePage from "./pages/HomePage";
-import "./assets/scss/App.scss";
+import AboutPage from "./pages/AboutPage";
 import Navigation from "./components/navigation/navigation";
 import PortfolioPage from "./pages/PortfolioPage";
 import ProjectPage from "./pages/ProjectPage";
-import AboutPage from "./pages/AboutPage";
+import "./assets/scss/App.scss";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/projects" element={<ProjectPage />} />
+        <Route path="/projects/:username" element={<ProjectPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
     </div>
