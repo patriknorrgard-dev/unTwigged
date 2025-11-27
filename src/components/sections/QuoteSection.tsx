@@ -1,10 +1,10 @@
+import { useParams } from "react-router";
 import { usePortfolio } from "../../hooks/usePortfolio";
 import QuoteList from "../lists/QuoteList";
 
 const QuoteSection = () => {
-  const { data } = usePortfolio(2);
-  
-  if (!data) return null;
+  const { username } = useParams();
+  const { data } = usePortfolio(String(username));
   
   return (
     <>

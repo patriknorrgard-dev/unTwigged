@@ -1,8 +1,10 @@
+import { useParams } from "react-router";
 import { usePortfolio } from "../../hooks/usePortfolio";
 import ProjectList from "../lists/ProjectList";
 
 const ProjectSection = () => {
-  const { data } = usePortfolio(2);
+  const { username } = useParams();
+  const { data } = usePortfolio(String(username));
 
   return (
     <>
