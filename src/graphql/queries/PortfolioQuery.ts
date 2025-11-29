@@ -8,6 +8,15 @@ export const GET_PORTFOLIO_CONTENT = gql`
       results {
         ... on NodePortfolio {
           id
+          title
+          description
+          image {
+            ... on MediaImage {
+                mediaImage { 
+                url 
+              }
+            }
+          }
           sections {
             ...ProjectSectionFragment
             ...QuoteSectionFragment
