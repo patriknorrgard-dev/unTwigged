@@ -1,10 +1,10 @@
-import { useParams } from "react-router";
+import { useParams } from "@tanstack/react-router";
 import { usePortfolio } from "../../hooks/usePortfolio";
 import QuoteList from "../lists/QuoteList";
 
 const QuoteSection = () => {
-  const { username } = useParams();
-  const { data } = usePortfolio(String(username));
+  const { username } = useParams({ from: "/portfolio/$username" });
+  const { data } = usePortfolio(username);
   
   return (
     <>

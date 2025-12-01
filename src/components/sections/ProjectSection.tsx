@@ -1,10 +1,10 @@
-import { useParams } from "react-router";
+import { useParams } from "@tanstack/react-router";
 import { usePortfolio } from "../../hooks/usePortfolio";
 import ProjectList from "../lists/ProjectList";
 
 const ProjectSection = () => {
-  const { username } = useParams();
-  const { data } = usePortfolio(String(username));
+  const { username } = useParams({ from: "/projects/$username" });
+  const { data } = usePortfolio(username);
 
   return (
     <>
