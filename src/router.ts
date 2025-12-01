@@ -40,7 +40,7 @@ const portfolioRoute = createRoute({
   component: PortfolioPage,
 })
 
-export const portfolioUserRoute = createRoute({
+const portfolioUserRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/portfolio/$username',
   component: PortfolioPage,

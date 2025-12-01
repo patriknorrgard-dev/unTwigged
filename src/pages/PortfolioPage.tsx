@@ -1,9 +1,8 @@
 import { useParams } from "@tanstack/react-router";
 import { usePortfolio } from "../hooks/usePortfolio";
-import { portfolioUserRoute } from "../router";
 
 const PortfolioPage = () => {
-  const { username } = useParams({ from: portfolioUserRoute.id });
+  const { username } = useParams({ from: "/portfolio/$username" });
   const { data } = usePortfolio(username);
 
   return (
