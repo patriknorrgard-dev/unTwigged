@@ -10,12 +10,16 @@ const HeroSection = () => {
           <div key={content.id}>
 
             {content.sections?.map((section: any) => (
-              <div key={section.id}>
-                <h3>{section.title}</h3>
-                <p>{section.description}</p>
+              <div key={section.id} className="hero">
+                <div className="hero__content">
+                  <h2>{section.title}</h2>
+                  <p>{section.description}</p>
+                </div>
+                
                 <img
                   src={section.image.mediaImage.url}
                   alt={section.title}
+                  className="hero__image"
                 />
               </div>
             ))}
