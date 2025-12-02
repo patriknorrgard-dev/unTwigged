@@ -3,8 +3,8 @@ import { gql } from "graphql-request";
 export const PROJECT_SECTION_FRAGMENT = gql`
   fragment ProjectSectionFragment on ParagraphProjectSection {
     id
-    sectionTitle
-    sectionDescription
+    title
+    description
     projectItems {
       ... on ParagraphProjectItem {
         id

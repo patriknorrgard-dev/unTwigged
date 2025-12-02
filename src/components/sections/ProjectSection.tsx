@@ -10,12 +10,12 @@ const ProjectSection = () => {
     <>
       {data && (
         data.usercontentbyidGraphql1.results.map((project: any) => (
-          <div key={project.id}>
+          <div key={project.id} className="project-section">
 
             {project.sections?.map((section: any) => (
               <div key={section.id}>
-                <h3>{section.sectionTitle}</h3>
-                <p>{section.sectionDescription}</p>
+                <h2 className="project-section__title">{section.title}</h2>
+                <p className="project-section__description">{section.description}</p>
 
                 <ProjectList items={section.projectItems || []} />
               </div>
