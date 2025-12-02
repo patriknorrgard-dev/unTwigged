@@ -2,8 +2,9 @@ import { Link } from "@tanstack/react-router";
 
 const Navigation = () => {
   return (
-    <div style={{ display: "flex", justifyContent: "end" }}>
-      <div style={{ display: "flex", gap: "2rem" }}>
+    <div className="navigation">
+      <h1 className="logo">Untwigged</h1>
+      <div className="navigation__links">
         <Link to={'/'}>Home</Link>
         <Link to={'/portfolio'}>Portfolio</Link>
         <Link to={'/projects'}>Projects</Link>
