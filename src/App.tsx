@@ -1,4 +1,4 @@
-import Navigation from "./components/navigation/navigation";
+import Navigation from "./components/navigation/Navigation";
 import { Outlet } from "@tanstack/react-router";
 import "./assets/scss/App.scss";
 
