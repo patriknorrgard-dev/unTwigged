@@ -8,6 +8,7 @@ export const GET_PORTFOLIOS_CONTENT = gql`
           author {
             name
           }
+          id
           title
           description
         }
