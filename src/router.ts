@@ -4,6 +4,7 @@ import AboutPage from "./pages/AboutPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ProjectPage from "./pages/ProjectPage";
 import App from "./App";
+import UserPortfolioPage from "./pages/UserPortfolioPage";
 
 const rootRoute = createRootRoute({
   component: App,
@@ -43,7 +44,7 @@ const portfolioRoute = createRoute({
 const portfolioUserRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/portfolio/$username',
-  component: PortfolioPage,
+  component: UserPortfolioPage,
 })
 
 // Collecting the route tree
