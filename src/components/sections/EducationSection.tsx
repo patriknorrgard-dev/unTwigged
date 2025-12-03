@@ -12,10 +12,12 @@ const EducationSection = () => {
         data.usercontentbyidGraphql1.results.map((content: any) => (
           <div key={content.id}>
             
-            {content.sections.map((section: any) => (
-              <div key={section.id}>
-                <EducationList items={section.milestoneItems || []} />
-              </div>
+            {content.sections
+              .filter((section: any) => section.__typename === "ParagraphEducationSection")
+              .map((section: any) => (
+                <div key={section.id}>
+                  <EducationList items={section.milestoneItems || []} />
+                </div>
             ))}
           </div>
         ))
