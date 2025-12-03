@@ -20,6 +20,7 @@ export const GET_PORTFOLIO_CONTENT = gql`
             }
           }
           sections {
+            __typename
             ...EducationSectionFragment
             ...ProjectSectionFragment
             ...QuoteSectionFragment
