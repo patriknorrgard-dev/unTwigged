@@ -10,8 +10,8 @@ const WorkSection = () => {
     <>
       {data && (
         data.usercontentbyidGraphql1.results.map((content: any) => (
-          <div key={content.id}>
-            
+          <div key={content.id} className="career__section">
+            <h3>Work experience</h3>
             {content.sections
               .filter((section: any) => section.__typename === "ParagraphWorkSection")
               .map((section: any) => (

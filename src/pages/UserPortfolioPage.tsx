@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { usePortfolios } from "../hooks/usePortfolios";
+import EducationSection from "../components/sections/EducationSection";
+import WorkSection from "../components/sections/WorkSection";
 
 const UserPortfolioPage = () => {
   const { data } = usePortfolios();
@@ -7,12 +9,18 @@ const UserPortfolioPage = () => {
   return (
     <>
       {data && (
-        <Link
-          to="/portfolio/$username/pdf"
-          params={{ username: data.usercontentbyidGraphql1.results[0].author.name }}
-        >
-          Checkout PDF
-        </Link>
+        <div className="portfolio">
+          <Link
+            to="/portfolio/$username/pdf"
+            params={{ username: data.usercontentbyidGraphql1.results[0].author.name }}
+          >
+            Checkout PDF
+          </Link>
+          <div className="career">
+            <EducationSection />
+            <WorkSection />
+          </div>
+        </div>
       )}
     </>
   );
