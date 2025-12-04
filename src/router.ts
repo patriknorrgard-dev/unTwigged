@@ -3,8 +3,9 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ProjectPage from "./pages/ProjectPage";
-import App from "./App";
 import UserPortfolioPage from "./pages/UserPortfolioPage";
+import PortfolioPDFViewer from "./components/PortfolioPDFViewer";
+import App from "./App";
 
 const rootRoute = createRootRoute({
   component: App,
@@ -47,6 +48,12 @@ const portfolioUserRoute = createRoute({
   component: UserPortfolioPage,
 })
 
+const portfolioUserPDFRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/portfolio/$username/pdf',
+  component: PortfolioPDFViewer,
+})
+
 // Collecting the route tree
 const routeTree = rootRoute.addChildren([
   indexRoute,
@@ -54,7 +61,8 @@ const routeTree = rootRoute.addChildren([
   projectRoute,
   portfolioRoute,
   projectUserRoute,
-  portfolioUserRoute
+  portfolioUserRoute,
+  portfolioUserPDFRoute
 ])
 
 // Create an instance of the router

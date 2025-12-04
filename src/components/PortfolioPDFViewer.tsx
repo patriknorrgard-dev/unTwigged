@@ -4,7 +4,7 @@ import { usePortfolio } from "../hooks/usePortfolio";
 import PortfolioPDFDocument from "../components/PortfolioPDFDocument";
 
 const PortfolioPDFViewer = () => {
-  const { username } = useParams({ from: "/portfolio/$username" });
+  const { username } = useParams({ from: "/portfolio/$username/pdf" });
     const { data } = usePortfolio(username);
 
   return (
