@@ -2,7 +2,7 @@ export interface Milestone {
   id: number;
   title: string;
   subtitle: string;
-  dataFrom: {
+  dateFrom: {
     time: string;
   }
   dateTo: {
