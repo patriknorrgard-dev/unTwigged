@@ -1,11 +1,11 @@
 import { Document, Page, View, Text } from "@react-pdf/renderer";
 import type { Portfolio } from "../types/Portfolio.types";
 
-interface PortfolioPDFProps {
+interface PortfolioPDFDocumentProps {
   items: Portfolio[];
 }
 
-const PortfolioPDF: React.FC<PortfolioPDFProps> = ({ items }) => {
+const PortfolioPDFDocument: React.FC<PortfolioPDFDocumentProps> = ({ items }) => {
   return (
     <Document>
       <Page size="A4">
@@ -20,4 +20,4 @@ const PortfolioPDF: React.FC<PortfolioPDFProps> = ({ items }) => {
   )
 }
 
-export default PortfolioPDF;
+export default PortfolioPDFDocument;
