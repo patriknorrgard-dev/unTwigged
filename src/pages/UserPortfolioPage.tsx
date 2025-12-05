@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { usePortfolios } from "../hooks/usePortfolios";
 import EducationSection from "../components/sections/EducationSection";
 import WorkSection from "../components/sections/WorkSection";
+import QuoteSection from "../components/sections/QuoteSection";
 
 const UserPortfolioPage = () => {
   const { data } = usePortfolios();
@@ -20,6 +21,8 @@ const UserPortfolioPage = () => {
             <EducationSection />
             <WorkSection />
           </div>
+
+          <QuoteSection />
         </div>
       )}
     </>
