@@ -1,0 +1,26 @@
+.quote-list {
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+
+  @media (min-width: 960px) {
+    flex-wrap: nowrap;
+  }
+}
+
+.quote-items {
+  display: flex;
+  gap: 1rem;
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

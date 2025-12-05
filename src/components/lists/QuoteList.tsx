@@ -7,11 +7,11 @@ interface QuoteListProps {
 
 const QuoteList: React.FC<QuoteListProps> = ({ items }) => {
   return (
-    <>
+    <div className="quote-list">
       {items.map(item => (
         <QuoteItems key={item.id} item={item} />
       ))}
-    </>
+    </div>
   )
 }
 
