@@ -11,6 +11,13 @@ export const GET_PORTFOLIOS_CONTENT = gql`
           id
           title
           description
+          image {
+            ... on MediaImage {
+                mediaImage { 
+                url 
+              }
+            }
+          }
         }
       }
     }

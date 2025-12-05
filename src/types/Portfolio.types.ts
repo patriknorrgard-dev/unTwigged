@@ -5,4 +5,9 @@ export interface Portfolio {
   author: {
     name: string;
   }
+  image: {
+    mediaImage: {
+      url: string;
+    }
+  }
 }
