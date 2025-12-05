@@ -1,31 +1,26 @@
-import { Link } from "@tanstack/react-router";
-import { usePortfolios } from "../hooks/usePortfolios";
+import { Link, useParams } from "@tanstack/react-router";
 import EducationSection from "../components/sections/EducationSection";
 import WorkSection from "../components/sections/WorkSection";
 import QuoteSection from "../components/sections/QuoteSection";
 
 const UserPortfolioPage = () => {
-  const { data } = usePortfolios();
+  const { username } = useParams({ from: "/portfolio/$username" });
 
   return (
-    <>
-      {data && (
-        <div className="portfolio">
-          <Link
-            to="/portfolio/$username/pdf"
-            params={{ username: data.usercontentbyidGraphql1.results[0].author.name }}
-          >
-            Checkout PDF
-          </Link>
-          <div className="career">
-            <EducationSection />
-            <WorkSection />
-          </div>
+    <div className="portfolio">
+      <Link
+        to="/portfolio/$username/pdf"
+        params={{ username }}
+      >
+        Download CV
+      </Link>
+      <div className="career">
+        <EducationSection />
+        <WorkSection />
+      </div>
 
-          <QuoteSection />
-        </div>
-      )}
-    </>
+      <QuoteSection />
+    </div>
   );
 };
 
