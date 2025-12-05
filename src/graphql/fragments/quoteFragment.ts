@@ -7,6 +7,11 @@ export const QUOTE_SECTION_FRAGMENT = gql`
       ... on ParagraphQuoteItem {
         quote
         source
+        image {
+          ... on MediaImage {
+            mediaImage { url }
+          }
+        }
       }
     }
   }
