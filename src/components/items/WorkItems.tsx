@@ -1,4 +1,5 @@
 import type { Milestone } from "../../types/Milestone.types";
+import { dateFormater } from "../../utils/dateFormater";
 
 interface WorkItemsProps {
   item: Milestone;
@@ -12,9 +13,9 @@ const WorkItems: React.FC<WorkItemsProps> = ({ item }) => {
       <div className="career__details">
         <p className="career__subtitle">{item.subtitle}</p>
         <div className="career__dates">
-          <p className="career_date">{item.dateFrom?.time}</p>
+          <p className="career_date">{dateFormater(item.dateFrom?.time)}</p>
           <p>-</p>
-          <p className="career_date">{item.dateTo?.time}</p>
+          <p className="career_date">{dateFormater(item.dateTo?.time)}</p>
         </div>
       </div>
     </>
