@@ -10,4 +10,10 @@ export interface Portfolio {
       url: string;
     }
   }
+  created: {
+    time: string;
+  }
+  changed: {
+    time: string;
+  }
 }
