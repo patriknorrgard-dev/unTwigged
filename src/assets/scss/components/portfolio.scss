@@ -20,6 +20,17 @@
     object-fit: cover;
     display: block;
   }
+
+  &__dates {
+    display: flex;
+    justify-content: right;
+    gap: 0.5rem;
+  }
+
+  &__date {
+    font-size: 1rem;
+    font-style: italic;
+  }
 }
 
 .career {
