@@ -1,8 +1,8 @@
 import { gql } from "graphql-request";
 
 export const GET_PORTFOLIOS_CONTENT = gql`
-  query GetPortfoliosContent{
-    usercontentbyidGraphql1 {
+  query GetPortfoliosContent($sort: UsercontentbyidGraphql1SortKeys!) {
+    usercontentbyidGraphql1(sortKey: $sort) {
       results {
         ... on NodePortfolio {
           author {
@@ -17,6 +17,12 @@ export const GET_PORTFOLIOS_CONTENT = gql`
                 url 
               }
             }
+          }
+          created {
+            time
+          }
+          changed {
+            time
           }
         }
       }
