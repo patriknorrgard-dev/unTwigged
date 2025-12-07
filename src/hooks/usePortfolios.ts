@@ -4,13 +4,13 @@ import { GET_PORTFOLIOS_CONTENT } from "../graphql/queries/PortfoliosQuery";
 
 const API_URL = 'https://untwigged.com/graphql';
 
-const fetchPortfoliosContent = async () => {
-  return request(API_URL, GET_PORTFOLIOS_CONTENT);
+const fetchPortfoliosContent = async (sort: string) => {
+  return request(API_URL, GET_PORTFOLIOS_CONTENT, { sort });
 };
 
-export function usePortfolios() {
+export function usePortfolios(sort: string) {
   return useQuery({
-    queryKey: ['portfolio'],
-    queryFn: () => fetchPortfoliosContent(),
+    queryKey: ['portfolio', sort],
+    queryFn: () => fetchPortfoliosContent(sort),
   });
 }
