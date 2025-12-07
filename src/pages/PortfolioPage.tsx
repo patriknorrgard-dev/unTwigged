@@ -4,6 +4,7 @@ import type { Portfolio } from "../types/Portfolio.types";
 import defaultImage from "../assets/images/default.jpg";
 import { dateFormater } from "../utils/dateFormater";
 import { useState } from "react";
+import Filter from "../components/Filter";
 
 const PortfolioPage = () => {
   const [sort, setSort] = useState("CHANGED");
@@ -11,13 +12,10 @@ const PortfolioPage = () => {
 
   return (
     <div className="portfolio">
-      <div style={{ display: "flex", justifyContent: "right", gap: "0.5rem" }}>
-        Filter:
-        <select value={sort} onChange={(e) => setSort(e.target.value)}>
-          <option value="CHANGED">Last updated</option>
-          <option value="CREATED">Last created</option>
-        </select>
-      </div>
+      <Filter 
+        sort={sort} 
+        onChangeSort={setSort} 
+      />
       
       {data &&
         data.usercontentbyidGraphql1.results
