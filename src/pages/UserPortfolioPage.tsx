@@ -16,9 +16,7 @@ const UserPortfolioPage = () => {
         to="/portfolio/$username/pdf"
         params={{ username }}
       >
-        <div role="button" style={{ textAlign: "right" }}>
-          <span style={{ border: "1px solid black", padding: "8px 16px" }}>Download CV</span>
-        </div>
+        <button className="portfolio__button">Download CV</button>
       </Link>
 
       {data && (
@@ -30,20 +28,15 @@ const UserPortfolioPage = () => {
               <EducationSection content={content} />
               <WorkSection content={content} />
             </div>
-            <div className="quotes">
-              <QuoteSection content={content} />
-            </div>
-            <div className="project">
-              <ProjectSection content={content} preview={true} />
-              <Link 
-                to="/projects/$username"
-                params={{ username }}
-              >
-                <div role="button" style={{ textAlign: "right" }}>
-                  <span style={{ border: "1px solid black", padding: "8px 16px" }}>View all projects</span>
-                </div>   
-              </Link>
-            </div>
+            
+            <QuoteSection content={content} />
+            <ProjectSection content={content} preview={true} />
+            <Link 
+              to="/projects/$username"
+              params={{ username }}
+            >
+              <button className="portfolio__button">View all projects</button>
+            </Link>
           </>
         ))
       )}
