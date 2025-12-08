@@ -3,9 +3,10 @@ import type { Project } from "../../types/Project.types";
 
 interface ProjectSectionProps {
   content: Project;
+  preview: boolean;
 }
 
-const ProjectSection: React.FC<ProjectSectionProps> = ({ content }) => {
+const ProjectSection: React.FC<ProjectSectionProps> = ({ content, preview }) => {
   return (
     <div key={content.id} className="project-section">
       {content.sections.map((section) => (
@@ -13,7 +14,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ content }) => {
           <h2 className="project-section__title">{section.title}</h2>
           <p className="project-section__description">{section.description}</p>
 
-          <ProjectList items={section.projectItems || []} />
+          <ProjectList items={section.projectItems || []} preview={preview} />
         </div>
       ))}
     </div>

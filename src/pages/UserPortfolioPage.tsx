@@ -16,7 +16,9 @@ const UserPortfolioPage = () => {
         to="/portfolio/$username/pdf"
         params={{ username }}
       >
-        Download CV
+        <div role="button" style={{ textAlign: "right" }}>
+          <span style={{ border: "1px solid black", padding: "8px 16px" }}>Download CV</span>
+        </div>
       </Link>
 
       {data && (
@@ -32,7 +34,15 @@ const UserPortfolioPage = () => {
               <QuoteSection content={content} />
             </div>
             <div className="project">
-              <ProjectSection content={content} />
+              <ProjectSection content={content} preview={true} />
+              <Link 
+                to="/projects/$username"
+                params={{ username }}
+              >
+                <div role="button" style={{ textAlign: "right" }}>
+                  <span style={{ border: "1px solid black", padding: "8px 16px" }}>View all projects</span>
+                </div>   
+              </Link>
             </div>
           </>
         ))
