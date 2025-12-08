@@ -9,10 +9,12 @@ const QuoteSection: React.FC<QuoteSectionProps> = ({ content }) => {
 
   return (
     <div key={content.id}>
-      {content.sections.map((section) => (
-        <div key={section.id}>
-          <QuoteList items={section.quoteItems || []} />
-        </div>
+      {content.sections
+        .filter((section) => section.__typename === "ParagraphQuoteSection")
+        .map((section) => (
+          <div key={section.id}>
+            <QuoteList items={section.quoteItems || []} />
+          </div>
       ))}
     </div>
   )
