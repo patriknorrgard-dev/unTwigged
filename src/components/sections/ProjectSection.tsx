@@ -1,29 +1,22 @@
-import { useParams } from "@tanstack/react-router";
-import { usePortfolio } from "../../hooks/usePortfolio";
 import ProjectList from "../lists/ProjectList";
+import type { Project } from "../../types/Project.types";
 
-const ProjectSection = () => {
-  const { username } = useParams({ from: "/projects/$username" });
-  const { data } = usePortfolio(username);
+interface ProjectSectionProps {
+  content: Project;
+}
 
+const ProjectSection: React.FC<ProjectSectionProps> = ({ content }) => {
   return (
-    <>
-      {data && (
-        data.usercontentbyidGraphql1.results.map((project: any) => (
-          <div key={project.id} className="project-section">
+    <div key={content.id} className="project-section">
+      {content.sections.map((section) => (
+        <div key={section.id}>
+          <h2 className="project-section__title">{section.title}</h2>
+          <p className="project-section__description">{section.description}</p>
 
-            {project.sections.map((section: any) => (
-              <div key={section.id}>
-                <h2 className="project-section__title">{section.title}</h2>
-                <p className="project-section__description">{section.description}</p>
-
-                <ProjectList items={section.projectItems || []} />
-              </div>
-            ))}
-          </div>
-        ))
-      )}
-    </>
+          <ProjectList items={section.projectItems || []} />
+        </div>
+      ))}
+    </div>
   )
 }
 

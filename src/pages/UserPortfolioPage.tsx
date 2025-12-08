@@ -4,6 +4,7 @@ import WorkSection from "../components/sections/WorkSection";
 import QuoteSection from "../components/sections/QuoteSection";
 import { usePortfolio } from "../hooks/usePortfolio";
 import PortfolioItems from "../components/items/PortfolioItems";
+import ProjectSection from "../components/sections/ProjectSection";
 
 const UserPortfolioPage = () => {
   const { username } = useParams({ from: "/portfolio/$username" });
@@ -29,6 +30,9 @@ const UserPortfolioPage = () => {
             </div>
             <div className="quotes">
               <QuoteSection content={content} />
+            </div>
+            <div className="project">
+              <ProjectSection content={content} />
             </div>
           </>
         ))
