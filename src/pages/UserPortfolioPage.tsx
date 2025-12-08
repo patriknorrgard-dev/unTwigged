@@ -4,7 +4,6 @@ import WorkSection from "../components/sections/WorkSection";
 import QuoteSection from "../components/sections/QuoteSection";
 import { usePortfolio } from "../hooks/usePortfolio";
 import PortfolioItems from "../components/items/PortfolioItems";
-import type { Portfolio } from "../types/Portfolio.types";
 
 const UserPortfolioPage = () => {
   const { username } = useParams({ from: "/portfolio/$username" });
@@ -20,17 +19,20 @@ const UserPortfolioPage = () => {
       </Link>
 
       {data && (
-        data.usercontentbyidGraphql1.results.map((item: Portfolio) => (
-          <PortfolioItems item={item} />
+        data.usercontentbyidGraphql1.results.map((content) => (
+          <>
+            <PortfolioItems item={content} />
+
+            <div className="career">
+              <EducationSection content={content} />
+              <WorkSection content={content} />
+            </div>
+            <div className="quotes">
+              <QuoteSection content={content} />
+            </div>
+          </>
         ))
       )}
-
-      <div className="career">
-        <EducationSection />
-        <WorkSection />
-      </div>
-
-      <QuoteSection />
     </div>
   );
 };

@@ -1,28 +1,22 @@
-import { usePortfolio } from "../../hooks/usePortfolio";
-import { useParams } from "@tanstack/react-router";
 import EducationList from "../lists/EducationList";
+import { type Portfolio } from "../../types/Portfolio.types";
 
-const EducationSection = () => {
-  const { username } = useParams({ from: "/portfolio/$username" })
-  const { data } = usePortfolio(username);
-    
+interface EducationSectionProps {
+  content: Portfolio;
+}
+
+const EducationSection: React.FC<EducationSectionProps> = ({ content }) => {
   return (
-    <>
-      {data && (
-        data.usercontentbyidGraphql1.results.map((content: any) => (
-          <div key={content.id} className="career__section">
-            <h3>Education</h3>
-            {content.sections
-              .filter((section: any) => section.__typename === "ParagraphEducationSection")
-              .map((section: any) => (
-                <div key={section.id}>
-                  <EducationList items={section.milestoneItems || []} />
-                </div>
-            ))}
+    <div className="career__section">
+      <h3>Education</h3>
+      {content.sections
+        .filter((section) => section.__typename === "ParagraphEducationSection")
+        .map((section) => (
+          <div key={section.id}>
+            <EducationList items={section.milestoneItems} />
           </div>
-        ))
-      )}
-    </>
+      ))}
+    </div>
   )
 }
 

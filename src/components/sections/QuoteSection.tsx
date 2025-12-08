@@ -1,26 +1,20 @@
-import { useParams } from "@tanstack/react-router";
-import { usePortfolio } from "../../hooks/usePortfolio";
 import QuoteList from "../lists/QuoteList";
+import type { Portfolio } from "../../types/Portfolio.types";
 
-const QuoteSection = () => {
-  const { username } = useParams({ from: "/portfolio/$username" });
-  const { data } = usePortfolio(username);
-  
+interface QuoteSectionProps {
+  content: Portfolio;
+}
+
+const QuoteSection: React.FC<QuoteSectionProps> = ({ content }) => {
+
   return (
-    <>
-      {data && (
-        data.usercontentbyidGraphql1.results.map((content: any) => (
-          <div key={content.id}>
-
-            {content.sections?.map((section: any) => (
-              <div key={section.id}>
-                <QuoteList items={section.quoteItems || []} />
-              </div>
-            ))}
-          </div>
-        ))
-      )}
-    </>
+    <div key={content.id}>
+      {content.sections.map((section) => (
+        <div key={section.id}>
+          <QuoteList items={section.quoteItems || []} />
+        </div>
+      ))}
+    </div>
   )
 }
 
