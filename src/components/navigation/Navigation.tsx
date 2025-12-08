@@ -7,8 +7,6 @@ const Navigation = () => {
       <div className="navigation__links">
         <Link to={'/'}>Home</Link>
         <Link to={'/portfolio'}>Portfolio</Link>
-        <Link to={'/projects'}>Projects</Link>
-        <Link to={'/about'}>About</Link>
       </div>
     </div>
   )
