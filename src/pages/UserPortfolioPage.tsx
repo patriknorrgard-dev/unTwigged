@@ -22,7 +22,7 @@ const UserPortfolioPage = () => {
       {data && (
         data.usercontentbyidGraphql1.results.map((content) => (
           <>
-            <PortfolioItems item={content} />
+            <PortfolioItems item={content} preview={false} />
 
             <div className="career">
               <EducationSection content={content} />

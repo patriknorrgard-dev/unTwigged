@@ -3,12 +3,13 @@ import defaultImage from "../../assets/images/default.jpg";
 
 interface PortfolioItemsProps {
   item: Portfolio;
+  preview: boolean;
 }
 
-const PortfolioItems: React.FC<PortfolioItemsProps> = ({ item }) => {
+const PortfolioItems: React.FC<PortfolioItemsProps> = ({ item, preview }) => {
   return (
     <div className="portfolio__item">
-      <div className="portfolio__image">
+      <div className={`portfolio__image ${preview ? "portfolio__image" : "portfolio__image--large"}`}>
         <img
           src={item.image?.mediaImage.url ?? defaultImage}
           className="portfolio__thumbnail"

@@ -15,7 +15,7 @@ const PortfolioPage = () => {
       />
       
       {data && (
-        <PortfolioList items={data.usercontentbyidGraphql1.results} />
+        <PortfolioList items={data.usercontentbyidGraphql1.results} preview={true} />
       )}
     </div>
   );
