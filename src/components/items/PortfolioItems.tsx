@@ -18,6 +18,9 @@ const PortfolioItems: React.FC<PortfolioItemsProps> = ({ item, preview }) => {
       <div>
         <h4>{item.title}</h4>
         <p>{item.description}</p>
+        <div
+          dangerouslySetInnerHTML={{ __html: item.body.processed }}
+        ></div>
       </div>
     </div>
   )

@@ -12,6 +12,9 @@ export const GET_PORTFOLIO_CONTENT = gql`
           id
           title
           description
+          body {
+            processed
+          }
           image {
             ... on MediaImage {
                 mediaImage { 
