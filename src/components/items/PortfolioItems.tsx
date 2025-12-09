@@ -16,11 +16,13 @@ const PortfolioItems: React.FC<PortfolioItemsProps> = ({ item, preview }) => {
         />
       </div>
       <div>
-        <h4>{item.title}</h4>
+        <h2 className={`portfolio__title ${preview ? "portfolio__title" : "portfolio__title--large"}`}>{item.title}</h2>
         <p>{item.description}</p>
-        <div
+        {!preview && (
+          <div
           dangerouslySetInnerHTML={{ __html: item.body.processed }}
         ></div>
+        )}
       </div>
     </div>
   )
