@@ -4,16 +4,17 @@ const HeroSection = () => {
   const { data } = useHome();
 
   return (
-    <>
+    <main>
+      <title>Untwigged | Portfolio platform</title>
       {data && (
-        data.usercontentGraphql1.results.map((content: any) => (
-          <div key={content.id}>
+        data.usercontentGraphql1.results.map((content, index) => (
+          <article key={index}>
 
-            {content.sections?.map((section: any) => (
-              <div key={section.id} className="hero">
+            {content.sections?.map((section) => (
+              <section key={section.id} className="hero">
                 <div className="hero__content">
-                  <h2>{section.title}</h2>
-                  <p>{section.description}</p>
+                  <h2 className="hero__title">{section.title}</h2>
+                  <p className="hero__description">{section.description}</p>
                 </div>
                 
                 <img
@@ -21,12 +22,12 @@ const HeroSection = () => {
                   alt={section.title}
                   className="hero__image"
                 />
-              </div>
+              </section>
             ))}
-          </div>
+          </article>
         ))
       )}
-    </>
+    </main>
   )
 }
 
