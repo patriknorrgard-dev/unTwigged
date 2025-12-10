@@ -3,7 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-left: 8rem;
+  gap: 4rem;
+  padding-left: 20rem;
 
   @media (min-width: 960px) {
     flex-wrap: nowrap;
@@ -17,6 +18,7 @@
 .career-section {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
   
 .career-item {
