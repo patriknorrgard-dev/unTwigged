@@ -6,18 +6,16 @@ interface QuoteSectionProps {
 }
 
 const QuoteSection: React.FC<QuoteSectionProps> = ({ content }) => {
-
   return (
-    <div key={content.id}>
+    <section key={content.id} className="quote-section">
+      <h3>{content.sections[0].title}</h3>
       {content.sections
         .filter((section) => section.__typename === "ParagraphQuoteSection")
         .map((section) => (
-          <div key={section.id} className="quote-section">
-            <h2>{section.title}</h2>
-            <QuoteList items={section.quoteItems || []} />
-          </div>
-      ))}
-    </div>
+          <QuoteList key={section.id} items={section.quoteItems} />
+        ))
+      }
+    </section>
   )
 }
 

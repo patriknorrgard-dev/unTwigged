@@ -6,16 +6,19 @@ interface QuoteItemsProps {
 
 const QuoteItems: React.FC<QuoteItemsProps> = ({ item }) => {
   return (
-    <div className="quote-items">
-      <img
-        src={item.image.mediaImage.url}
-        className="quote-items__image"
-      />
-      <div className="quote-items__content">
-        <h4>{item.quote}</h4>
+    <article className="quote-item">
+      <figure>
+        <img
+          src={item.image.mediaImage.url}
+          className="quote-item__image"
+        />
+      </figure>
+      
+      <section className="quote-item__content">
+        <h4 className="quote-item__quote">{item.quote}</h4>
         <p>- {item.source}</p>
-      </div>
-    </div>
+      </section>
+    </article>
   )
 }
 

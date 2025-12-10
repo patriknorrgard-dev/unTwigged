@@ -6,25 +6,34 @@
   margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
+  gap: 1.5rem;
+  list-style-type: none;
+  padding: 0;
 
   @media (min-width: 960px) {
     flex-wrap: nowrap;
+    gap: 10rem;
   }
 }
 
-.quote-items {
+.quote-item {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 
   &__image {
     width: 100%;
     height: auto;
+    display: block;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  @media (min-width: 960px) {
+    flex-wrap: nowrap;
   }
 }
