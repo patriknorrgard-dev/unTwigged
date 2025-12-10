@@ -8,18 +8,20 @@ interface ProjectSectionProps {
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({ content, preview }) => {
   return (
-    <div key={content.id} className="project-section">
+    <section key={content.id} className={`project-section ${preview ? "project-section--preview" : ""} `}>
+      <h3>{content.sections[1].title}</h3>
+      <p>{content.sections[0].description}</p>
       {content.sections
         .filter((section) => section.__typename === "ParagraphProjectSection")
         .map((section) => (
-          <div key={section.id}>
-            <h2 className="project-section__title">{section.title}</h2>
-            <p className="project-section__description">{section.description}</p>
-
-            <ProjectList items={section.projectItems || []} preview={preview} />
-          </div>
-      ))}
-    </div>
+          <ProjectList
+            key={section.id}
+            items={section.projectItems}
+            preview={preview}
+          />
+        ))
+      }
+    </section>
   )
 }
 

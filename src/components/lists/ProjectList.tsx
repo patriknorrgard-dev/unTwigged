@@ -8,11 +8,13 @@ interface ProjectListProps {
 
 const ProjectList: React.FC<ProjectListProps> = ({ items, preview }) => {
   return (
-    <div className={`project-list ${preview ? "project-list--row" : "project-list--col"}`}>
+    <ul className={`project-list ${preview ? "project-list--preview" : ""}`}>
       {items.map(item => (
-        <ProjectItems key={item.id} item={item} />
+        <li key={item.id}>
+          <ProjectItems item={item} preview={preview} />
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 

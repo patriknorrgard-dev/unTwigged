@@ -33,13 +33,14 @@
   &__image {
     width: 150px;
     height: 170px;
-    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
 
-  &--large {
-    width: 100%;
-    height: auto;
+    &--large {
+      width: 100%;
+      height: auto;
+    }
   }
-}
 
   &__title {
     font-size: 1.9rem;
