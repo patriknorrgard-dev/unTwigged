@@ -4,8 +4,7 @@ const HeroSection = () => {
   const { data } = useHome();
 
   return (
-    <main>
-      <title>Untwigged | Portfolio platform</title>
+    <>
       {data && (
         data.usercontentGraphql1.results.map((content, index) => (
           <article key={index}>
@@ -27,7 +26,7 @@ const HeroSection = () => {
           </article>
         ))
       )}
-    </main>
+    </>
   )
 }
 
