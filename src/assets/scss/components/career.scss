@@ -1,0 +1,52 @@
+.career {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 8rem;
+
+  @media (min-width: 960px) {
+    flex-wrap: nowrap;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+}
+
+.career-section {
+  display: flex;
+  flex-direction: column;
+}
+  
+.career-item {
+  &__title {
+    font-size: 1.2rem;
+  }
+
+  &__details {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  &__details-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    gap: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+  }
+
+  &__dates {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__date {
+    font-size: 1rem;
+  }
+}
