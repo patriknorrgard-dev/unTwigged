@@ -7,16 +7,14 @@ interface WorkSectionProps {
 
 const WorkSection: React.FC<WorkSectionProps> = ({ content }) => {
   return (
-    <div key={content.id} className="career__section">
+    <section key={content.id} className="career-section">
       <h3>Work experience</h3>
       {content.sections
         .filter((section) => section.__typename === "ParagraphWorkSection")
         .map((section) => (
-          <div key={section.id}>
-            <WorkList items={section.milestoneItems} />
-          </div>
+          <WorkList key={section.id} items={section.milestoneItems} />
       ))}
-    </div>
+    </section>
   )
 }
 

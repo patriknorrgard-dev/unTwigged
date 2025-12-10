@@ -7,11 +7,13 @@ interface WorkListProps {
 
 const WorkList: React.FC<WorkListProps> = ({ items }) => {
   return (
-    <>
+    <ul className="career__list">
       {items.map(item => (
-        <WorkItems key={item.id} item={item} />
+        <li key={item.id}>
+          <WorkItems item={item} />
+        </li>
       ))}
-    </>
+    </ul>
   )
 }
 

@@ -7,11 +7,13 @@ interface EducationListProps {
 
 const EducationList: React.FC<EducationListProps> = ({ items }) => {
   return (
-    <>
+    <ul className="career__list">
       {items.map(item => (
-        <EducationItems key={item.id} item={item} />
+        <li key={item.id}>
+          <EducationItems item={item} />
+        </li>
       ))}
-    </>
+    </ul>
   )
 }
 

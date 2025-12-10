@@ -7,18 +7,24 @@ interface EducationItemsProps {
 
 const EducationItems: React.FC<EducationItemsProps> = ({ item }) => {
   return (
-    <>
-      <h4 className="career__title">{item.title}</h4>
+    <article className="career-item">
+      <details className="career-item__details">
+        <summary className="career-item__title">{item.title}</summary>
 
-      <div className="career__details">
-        <p className="career__subtitle">{item.subtitle}</p>
-        <div className="career__dates">
-          <p className="career_date">{dateFormater(item.dateFrom?.time)}</p>
-          <p>-</p>
-          <p className="career_date">{dateFormater(item.dateTo?.time)}</p>
+        <div className="career-item__details-content">
+          <p className="career-item__subtitle">{item.subtitle}</p>
+          <div className="career-item__dates">
+            <time className="career-item__date" dateTime={item.dateFrom?.time || ''}>
+              {dateFormater(item.dateFrom?.time)}
+            </time>
+            <span>-</span>
+            <time className="career-item__date" dateTime={item.dateTo?.time || ''}>
+              {dateFormater(item.dateTo?.time)}
+            </time>
+          </div>
         </div>
-      </div>
-    </>
+      </details>
+    </article>
   )
 }
 

@@ -7,16 +7,15 @@ interface EducationSectionProps {
 
 const EducationSection: React.FC<EducationSectionProps> = ({ content }) => {
   return (
-    <div className="career__section">
+    <section className="career-section">
       <h3>Education</h3>
       {content.sections
         .filter((section) => section.__typename === "ParagraphEducationSection")
         .map((section) => (
-          <div key={section.id}>
-            <EducationList items={section.milestoneItems} />
-          </div>
-      ))}
-    </div>
+          <EducationList key={section.id} items={section.milestoneItems} />
+        ))
+      }
+    </section>
   )
 }
 
