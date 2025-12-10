@@ -2,12 +2,6 @@ import type { Milestone } from "./Milestone.types";
 import type { Project } from "./Project.types";
 import type { Quote } from "./Quote.types";
 
-export interface PortfolioData {
-  usercontentbyidGraphql1: {
-    results: Portfolio[];
-  }
-}
-
 export interface Portfolio {
   id: number;
   title: string;
