@@ -4,13 +4,13 @@ import { GET_USERS_LOCATION } from "../graphql/queries/MapQuery";
 
 const API_URL = 'https://untwigged.com/graphql';
 
-const fetchUserLocations = async () => {
-  return request(API_URL, GET_USERS_LOCATION);
+const fetchUserLocations = async (search: string) => {
+  return request(API_URL, GET_USERS_LOCATION, { search });
 };
 
-export function useLocations() {
+export function useLocations(search: string) {
   return useQuery({
-    queryKey: ['location'],
-    queryFn: () => fetchUserLocations(),
+    queryKey: ['location', search],
+    queryFn: () => fetchUserLocations(search),
   });
 }
