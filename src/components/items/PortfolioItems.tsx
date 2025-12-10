@@ -8,23 +8,24 @@ interface PortfolioItemsProps {
 
 const PortfolioItems: React.FC<PortfolioItemsProps> = ({ item, preview }) => {
   return (
-    <div className="portfolio__item">
-      <div className={`portfolio__image ${preview ? "portfolio__image" : "portfolio__image--large"}`}>
+    <article className="portfolio-item">
+      <figure className={`${preview ? "portfolio-item__image" : "portfolio-item__image--large"}`}>
         <img
           src={item.image?.mediaImage.url ?? defaultImage}
-          className="portfolio__thumbnail"
+          className="portfolio-item__thumbnail"
         />
-      </div>
-      <div>
-        <h2 className={`portfolio__title ${preview ? "portfolio__title" : "portfolio__title--large"}`}>{item.title}</h2>
+      </figure>
+
+      <section>
+        <h2 className={`${preview ? "portfolio-item__title" : "portfolio-item__title--large"}`}>
+          {item.title}
+        </h2>
         <p>{item.description}</p>
         {!preview && (
-          <div
-          dangerouslySetInnerHTML={{ __html: item.body.processed }}
-        ></div>
+          <div dangerouslySetInnerHTML={{ __html: item.body.processed }}></div>
         )}
-      </div>
-    </div>
+      </section>
+    </article>  
   )
 }
 

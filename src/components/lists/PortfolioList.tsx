@@ -10,23 +10,24 @@ interface PortfolioListProps {
 
 const PortfolioList: React.FC<PortfolioListProps> = ({ items, preview }) => {
   return (
-    <>
+    <ul className="portfolio-list">
       {items
-        .filter((item: any) => item.author?.name)
-        .map((item: Portfolio) => (
-          <Link
-            key={item.id}
-            to="/portfolio/$username"
-            params={{ username: item.author?.name }}
-          >
-           <PortfolioItems key={item.id} item={item} preview={preview} />
-           <div className="portfolio__dates">
-            <p className="portfolio__date">Created at {dateFormater(item.created.time)},</p>
-            <p className="portfolio__date">Last updated {dateFormater(item.changed.time)}</p>
-           </div>
-          </Link>
+        .filter((item) => item.author?.name)
+        .map((item) => (
+          <li key={item.id}>
+            <Link
+              to="/portfolio/$username"
+              params={{ username: item.author?.name }}
+            >
+              <PortfolioItems key={item.id} item={item} preview={preview} />
+              <div className="portfolio-list__dates">
+                <time className="portfolio-list__date">Created at {dateFormater(item.created.time)},</time>
+                <time className="portfolio-list__date">Last updated {dateFormater(item.changed.time)}</time>
+              </div>
+            </Link>
+          </li>
       ))}
-    </>
+    </ul>
   )
 }
 
