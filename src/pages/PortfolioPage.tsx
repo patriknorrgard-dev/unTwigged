@@ -1,6 +1,6 @@
 import { usePortfolios } from "../hooks/usePortfolios";
 import { useState } from "react";
-import Filter from "../components/Filter";
+import Sort from "../components/Sort";
 import PortfolioList from "../components/lists/PortfolioList";
 
 const PortfolioPage = () => {
@@ -9,9 +9,9 @@ const PortfolioPage = () => {
 
   return (
     <div className="portfolio">
-      <Filter 
-        sort={sort} 
-        onChangeSort={setSort} 
+      <Sort
+        sort={sort}
+        onChangeSort={setSort}
       />
       
       {data && (

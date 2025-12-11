@@ -1,12 +1,12 @@
-interface FilterProps {
+interface SortProps {
   sort: string;
   onChangeSort: (value: string) => void;
 }
 
-const Filter: React.FC<FilterProps> = ({ sort, onChangeSort }) => {
+const Sort: React.FC<SortProps> = ({ sort, onChangeSort }) => {
   return (
     <div style={{ display: "flex", justifyContent: "right", gap: "0.5rem" }}>
-      Filter:
+      Sort:
       <select value={sort} onChange={(e) => onChangeSort(e.target.value)}>
         <option value="TITLE">by title</option>
         <option value="CHANGED">by last updated</option>
@@ -16,4 +16,4 @@ const Filter: React.FC<FilterProps> = ({ sort, onChangeSort }) => {
   )
 }
 
-export default Filter;
+export default Sort;
