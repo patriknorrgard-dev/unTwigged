@@ -19,11 +19,12 @@ const PortfolioList: React.FC<PortfolioListProps> = ({ items, preview }) => {
               to="/portfolio/$username"
               params={{ username: item.author?.name }}
             >
-              <PortfolioItems key={item.id} item={item} preview={preview} />
               <div className="portfolio-list__dates">
-                <time className="portfolio-list__date">Created at {dateFormater(item.created.time)},</time>
+                <time className="portfolio-list__date">Created at {dateFormater(item.created.time)}</time>
+                <span>,&nbsp;</span>
                 <time className="portfolio-list__date">Last updated {dateFormater(item.changed.time)}</time>
               </div>
+              <PortfolioItems key={item.id} item={item} preview={preview} />
             </Link>
           </li>
       ))}

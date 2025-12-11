@@ -16,8 +16,13 @@
 
   &__dates {
     display: flex;
-    justify-content: right;
-    gap: 0.5rem;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+
+    @media (min-width: 960px) {
+      justify-content: end;
+    }
   }
 
   &__date {
@@ -28,32 +33,42 @@
 
 .portfolio-item {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 
-  &__image {
-    width: 150px;
-    height: 170px;
-    object-fit: cover;
-    display: block;
+  @media (min-width: 960px) {
+    flex-wrap: nowrap;
 
-    &--large {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  &__title {
-    font-size: 1.9rem;
-
-    &--large {
+    .portfolio-item__title {
       font-size: 2.8rem;
     }
   }
 
-  &__thumbnail {
+  figure {
+    max-width: 410px;
+  }
+
+  &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+  }
+
+  &--preview {
+    @media (min-width: 960px) {
+
+      .portfolio-item__image {
+        max-width: 150px;
+      }
+
+      .portfolio-item__title {
+        font-size: 1.9rem;
+      }
+    }
   }
 }
