@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "@react-pdf/renderer";
-import type { Milestone } from "../types/Milestone.types";
-import { dateFormater } from "../utils/dateFormater";
+import type { Milestone } from "../../types/Milestone.types";
+import { dateFormater } from "../../utils/dateFormater";
 
 const styles = StyleSheet.create({
   title: {
@@ -13,28 +13,28 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   subtitle: {
-    fontSize: 9 ,
+    fontSize: 9,
   },
   dates: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    gap: 8,
+    gap: 9,
   },
   date: {
-    fontSize: 9,
+    fontSize: 8,
   }
 })
 
-interface EducationPDFProps {
+interface WorkPDFProps {
   sections: Milestone[];
 }
 
-const EducationPDF: React.FC<EducationPDFProps> = ({ sections }) => {
+const WorkPDF: React.FC<WorkPDFProps> = ({ sections }) => {
   return (
     <>
       {sections
-        .filter((section: any) => section.__typename === "ParagraphEducationSection")
+        .filter((section: any) => section.__typename === "ParagraphWorkSection")
         .map((section: any) => (
           <View key={section.id}>
             {section.milestoneItems?.map((item :any) => (
@@ -56,4 +56,4 @@ const EducationPDF: React.FC<EducationPDFProps> = ({ sections }) => {
   );
 };
 
-export default EducationPDF;
+export default WorkPDF;

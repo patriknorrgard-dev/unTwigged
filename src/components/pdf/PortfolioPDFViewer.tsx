@@ -1,7 +1,7 @@
 import { PDFViewer } from "@react-pdf/renderer";
 import { useParams } from "@tanstack/react-router";
-import { usePortfolio } from "../hooks/usePortfolio";
-import PortfolioPDFDocument from "../components/PortfolioPDFDocument";
+import { usePortfolio } from "../../hooks/usePortfolio";
+import PortfolioPDFDocument from ".././pdf/PortfolioPDFDocument";
 
 const PortfolioPDFViewer = () => {
   const { username } = useParams({ from: "/portfolio/$username/pdf" });

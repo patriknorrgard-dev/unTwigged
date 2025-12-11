@@ -4,7 +4,7 @@ import AboutPage from "./pages/AboutPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ProjectPage from "./pages/ProjectPage";
 import UserPortfolioPage from "./pages/UserPortfolioPage";
-import PortfolioPDFViewer from "./components/PortfolioPDFViewer";
+import PortfolioPDFViewer from "./components/pdf/PortfolioPDFViewer";
 import App from "./App";
 
 const rootRoute = createRootRoute({
