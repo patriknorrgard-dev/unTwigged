@@ -30,13 +30,8 @@ const UserPortfolioPage = () => {
             </div>
             
             <QuoteSection content={content} />
-            <ProjectSection content={content} preview={true} />
-            <Link 
-              to="/projects/$username"
-              params={{ username }}
-            >
-              <button className="portfolio__button">View all projects</button>
-            </Link>
+            <ProjectSection content={content} preview={true} username={username} />
+            
           </>
         ))
       )}
