@@ -1,6 +1,5 @@
 import { createRouter, createRootRoute, createRoute } from "@tanstack/react-router";
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
 import PortfolioPage from "./pages/PortfolioPage";
 import ProjectPage from "./pages/ProjectPage";
 import UserPortfolioPage from "./pages/UserPortfolioPage";
@@ -16,12 +15,6 @@ const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/',
   component: HomePage,
-})
-
-const aboutRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/about',
-  component: AboutPage,
 })
 
 const projectRoute = createRoute({
@@ -57,7 +50,6 @@ const portfolioUserPDFRoute = createRoute({
 // Collecting the route tree
 const routeTree = rootRoute.addChildren([
   indexRoute,
-  aboutRoute,
   projectRoute,
   portfolioRoute,
   projectUserRoute,
