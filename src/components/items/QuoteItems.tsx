@@ -16,7 +16,7 @@ const QuoteItems: React.FC<QuoteItemsProps> = ({ item }) => {
       
       <section className="quote-item__content">
         <h4 className="quote-item__quote">{item.quote}</h4>
-        <p>- {item.source}</p>
+        <p className="quote-item__source">{item.source}</p>
       </section>
     </article>
   )
