@@ -6,6 +6,9 @@ interface WorkSectionProps {
 }
 
 const WorkSection: React.FC<WorkSectionProps> = ({ content }) => {
+
+  if (!content.sections || !content.sections.length) return null;
+
   return (
     <section key={content.id} className="career-section">
       <h3>Work experience</h3>

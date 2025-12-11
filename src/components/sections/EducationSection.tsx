@@ -6,6 +6,9 @@ interface EducationSectionProps {
 }
 
 const EducationSection: React.FC<EducationSectionProps> = ({ content }) => {
+
+  if (!content.sections || !content.sections.length) return null;
+
   return (
     <section className="career-section">
       <h3>Education</h3>
@@ -19,4 +22,4 @@ const EducationSection: React.FC<EducationSectionProps> = ({ content }) => {
   )
 }
 
-export default EducationSection;
+export default EducationSection;  

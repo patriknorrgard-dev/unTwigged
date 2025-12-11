@@ -7,6 +7,9 @@ interface PortfolioItemsProps {
 }
 
 const PortfolioItems: React.FC<PortfolioItemsProps> = ({ item, preview }) => {
+
+  if (!item.description && !item.body) return null;
+
   return (
     <article className="portfolio-item">
       <figure className={`${preview ? "portfolio-item__image" : "portfolio-item__image--large"}`}>
@@ -22,7 +25,7 @@ const PortfolioItems: React.FC<PortfolioItemsProps> = ({ item, preview }) => {
         </h2>
         <p>{item.description}</p>
         {!preview && (
-          <div dangerouslySetInnerHTML={{ __html: item.body.processed }}></div>
+          <div dangerouslySetInnerHTML={{ __html: item.body?.processed }}></div>
         )}
       </section>
     </article>  
