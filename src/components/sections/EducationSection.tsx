@@ -11,7 +11,7 @@ const EducationSection: React.FC<EducationSectionProps> = ({ content }) => {
 
   return (
     <section className="career-section">
-      <h3>Education</h3>
+      <h3 className="career-section__title">Education</h3>
       {content.sections
         .filter((section) => section.__typename === "ParagraphEducationSection")
         .map((section) => (

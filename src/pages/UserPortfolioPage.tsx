@@ -25,8 +25,12 @@ const UserPortfolioPage = () => {
             <PortfolioItems item={content} preview={false} />
 
             <div className="career">
-              <EducationSection content={content} />
-              <WorkSection content={content} />
+              <div className="career__left">
+                <EducationSection content={content} />
+              </div>
+              <div className="career__right">
+                <WorkSection content={content} />
+              </div>
             </div>
             
             <QuoteSection content={content} />

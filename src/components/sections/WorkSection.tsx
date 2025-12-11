@@ -11,7 +11,7 @@ const WorkSection: React.FC<WorkSectionProps> = ({ content }) => {
 
   return (
     <section key={content.id} className="career-section">
-      <h3>Work experience</h3>
+      <h3 className="career-section__title">Work experience</h3>
       {content.sections
         .filter((section) => section.__typename === "ParagraphWorkSection")
         .map((section) => (
