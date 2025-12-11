@@ -10,7 +10,11 @@ const ProjectPage = () => {
     <>
       {data && (
         data.usercontentbyidGraphql1.results.map((content) => (
-          <ProjectSection content={content} preview={false} />
+          <ProjectSection 
+            content={content}
+            preview={false}
+            username={username}
+          />
         ))
       )}
     </>
