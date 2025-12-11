@@ -14,8 +14,16 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ content, preview, usern
 
   return (
     <section key={content.id} className={`project-section ${preview ? "project-section--preview" : ""} `}>
-      <h3>{content.sections[1].title}</h3>
-      <p>{content.sections[0].description}</p>
+      <h3 className="project-section__title">{content.sections[1].title}</h3>
+      <p className="project-section__description">{content.sections[1].description}</p>
+
+      <Link 
+        to="/projects/$username"
+        params={{ username }}
+      >
+        <button className="project-section__button">View all projects</button>
+      </Link>
+      
       {content.sections
         .filter((section) => section.__typename === "ParagraphProjectSection")
         .map((section) => (
@@ -26,12 +34,6 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({ content, preview, usern
           />
         ))
       }
-      <Link 
-          to="/projects/$username"
-          params={{ username }}
-        >
-          <button className="portfolio__button">View all projects</button>
-        </Link>
     </section>
   )
 }
