@@ -13,6 +13,7 @@ export const GET_PORTFOLIO_CONTENT = gql`
           title
           description
           body {
+            value
             processed
           }
           image {

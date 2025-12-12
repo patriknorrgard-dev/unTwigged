@@ -15,6 +15,10 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 12,
   },
+  portfolioBody: {
+    fontSize: 12,
+    marginBottom: 12,
+  },
   careerRow: {
     display: "flex",
     flexDirection: "row",
@@ -38,6 +42,7 @@ const PortfolioPDFDocument = ({ items }: any) => {
       <Page size="A4" style={styles.page}>
         <Text style={styles.portfolioTitle}>{items[0].title}</Text>
         <Text style={styles.portfolioDescription}>{items[0].description}</Text>
+        <Text style={styles.portfolioBody}>{items[0].body.value}</Text>
 
         <View style={styles.careerRow}>
           <View style={styles.careerCol}>

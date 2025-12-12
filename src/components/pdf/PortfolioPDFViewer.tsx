@@ -5,7 +5,7 @@ import PortfolioPDFDocument from ".././pdf/PortfolioPDFDocument";
 
 const PortfolioPDFViewer = () => {
   const { username } = useParams({ from: "/portfolio/$username/pdf" });
-    const { data } = usePortfolio(username);
+  const { data } = usePortfolio(username);
 
   return (
     <div style={{ height: "100vh" }}>
