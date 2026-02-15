@@ -1,73 +1,28 @@
-# React + TypeScript + Vite
+# unTwigged
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**unTwigged** is a frontend prototype built as an exam project to explore building a modern web interface for **Drupal** without relying on custom Drupal templating.
 
-Currently, two official plugins are available:
+The project demonstrates how to **decouple the frontend from Drupal**, using React, TypeScript, Vite, and GraphQL for data fetching. It also includes an interactive map to display registered users’ locations. The goal is to explore a modern, maintainable, and scalable architecture for Drupal-based sites.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> ⚠️ **Note:** This project contains **only the frontend** built with React. A separate Drupal backend with **GraphQL enabled** is required for the app to function.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Purpose
 
-## Expanding the ESLint configuration
+- Experiment with **headless Drupal** using a modern frontend stack  
+- Avoid Drupal’s traditional PHP templating system (Twig)  
+- Explore **modern frontend tooling** in an academic/prototyping context  
+- Demonstrate **interactive map integration** for visualizing user data  
+- Serve as a reference for building decoupled, API-driven Drupal interfaces  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **React + TypeScript** – UI and type-safe development  
+- **Vite** – Fast development server and build tool  
+- **GraphQL (via Drupal)** – Fetch content and user data  
+- **Leaflet / React-Leaflet** – Interactive map visualization  
+- **ESLint** – Code quality and consistency  
+- Optional libraries: React Router, React Query for API handling
