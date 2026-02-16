@@ -1,6 +1,6 @@
 # unTwigged
 
-**unTwigged** is a frontend prototype built as an exam project to explore building a modern web interface for **Drupal** without relying on custom Drupal templating.
+**unTwigged** is a frontend prototype built as an exam project to explore building a portfolio platform for multiple users using Drupal as headless CMS.
 
 The project demonstrates how to **decouple the frontend from Drupal**, using React, TypeScript, Vite, and GraphQL for data fetching. It also includes an interactive map to display registered users’ locations. The goal is to explore a modern, maintainable, and scalable architecture for Drupal-based sites.
 
@@ -11,9 +11,7 @@ The project demonstrates how to **decouple the frontend from Drupal**, using Rea
 ## Purpose
 
 - Experiment with **headless Drupal** using a modern frontend stack  
-- Avoid Drupal’s traditional PHP templating system (Twig)  
 - Explore **modern frontend tooling** in an academic/prototyping context  
-- Demonstrate **interactive map integration** for visualizing user data  
 - Serve as a reference for building decoupled, API-driven Drupal interfaces  
 
 ---
